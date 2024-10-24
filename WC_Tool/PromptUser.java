@@ -13,8 +13,18 @@ public class PromptUser {
     }
 
     public void promptForUserInput(){
+        System.out.println("Enter the command: ");
         String cmd = inputScanner.nextLine();
-        System.out.println("Command is: " + cmd);
+        parseInput(cmd);
+    }
+
+    public void parseInput(String command){
+        String regex = " ";
+
+        String arr[] = command.split(regex);
+
+        setOption(arr[0]);
+        setFileName(arr[1]);
     }
 
     public void closeScanner(){
